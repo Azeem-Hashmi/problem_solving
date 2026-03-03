@@ -47,19 +47,67 @@
 
 from typing import List
 
+# class Solution:
+#     def removeDuplicates(self, nums: List[int]) -> int:
+#         k = 2
+
+#         for i in range(2, len(nums)):
+#             if nums[i] != nums[k - 2]:
+#                 nums[k] = nums[i]
+#                 k += 1 
+
+#         return k
+    
+
+# --------------------------------------------------
+
+
+# class Solution:
+#     def removeDuplicates(self, nums: List[int]) -> int:
+
+#         k = 0
+#         index = 0
+#         count = 0
+#         j = 0
+#         for i in range(1, len(nums)):
+#             if nums[j] == nums[i] and count < 1:
+#                 count+=1
+#                 j+=1
+#                 k+=1
+#             if nums[j] != nums[i]:
+#                 if count > 1:
+#                     nums[index] = nums[i]
+#                     index+=1
+#                     k+=1
+#                 else:
+#                     j = i
+#                     k+=1
+#                     count = 0
+#             if nums[j] == nums[i] and count == 1:
+#                 j+=1
+#                 index = j
+#                 count+=1
+#                 k+=1
+
+    
+#         return k
+
+
+# -------------------------------------------------------------
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         k = 2
-
         for i in range(2, len(nums)):
-            if nums[i] != nums[k - 2]:
+            if nums[i] != nums[k-2]:
                 nums[k] = nums[i]
-                k += 1 
-
+                k+=1
         return k
     
 
+
+
 if __name__ == '__main__':
-    nums = [1,1,1,2,2,3]
+    nums = [0,0,1,1,1,1,2,3,3]
     k = Solution().removeDuplicates(nums)
     print(k)
